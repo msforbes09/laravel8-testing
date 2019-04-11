@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TestSender;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -13,7 +14,12 @@ class TestController extends Controller
      */
     public function index()
     {
-        //
+        \Mail::to('forbearnel09@gmail.com')
+            ->send(
+                new TestSender
+            );
+        
+        // dd('test');
     }
 
     /**
