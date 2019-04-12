@@ -3,6 +3,8 @@
 @section ('content')
     <section class="section">
         <div class="container">
+            {{ Breadcrumbs::render('mail') }}
+
             <article class="message">
                 <div class="message-header">
                     <p>Send Email</p>

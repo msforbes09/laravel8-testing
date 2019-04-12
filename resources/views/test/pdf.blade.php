@@ -3,6 +3,8 @@
 @section ('content')
     <section class="section">
         <div class="container">
+            {{ Breadcrumbs::render('pdf') }}
+            
             <article class="message">
                 <div class="message-header">
                     <p>Generate PDF</p>

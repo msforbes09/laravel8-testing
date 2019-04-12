@@ -18,24 +18,6 @@
             <a class="navbar-item" href="{{ route('test.mail') }}">Mail</a>
 
             <a class="navbar-item" href="{{ route('test.domPDF') }}">DomPDF</a>
-
-            {{-- <a class="navbar-item" href="#">Documentation</a>
-
-            <div class="navbar-item has-dropdown is-hoverable">
-                <span class="navbar-link">More</span>
-
-                <div class="navbar-dropdown">
-                    <a class="navbar-item" href="#">About</a>
-
-                    <a class="navbar-item" href="#">Jobs</a>
-
-                    <a class="navbar-item" href="#">Contact</a>
-
-                    <hr class="navbar-divider">
-                    
-                    <a class="navbar-item" href="#">Report an issue</a> --}}
-                </div><!-- dropdown -->
-            </div><!-- has-dropdown -->
         </div><!-- navbar-start -->
     </div><!-- navbar-menu -->
 </nav><!-- navbar -->
