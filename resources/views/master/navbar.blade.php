@@ -17,6 +17,8 @@
 
             <a class="navbar-item" href="{{ route('test.mail') }}">Mail</a>
 
+            <a class="navbar-item" href="{{ route('test.domPDF') }}">DomPDF</a>
+
             {{-- <a class="navbar-item" href="#">Documentation</a>
 
             <div class="navbar-item has-dropdown is-hoverable">

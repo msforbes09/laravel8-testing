@@ -19,3 +19,5 @@ Route::get('/', function () {
 Route::get('/test', 'TestController@index')->name('test.index');
 Route::get('/test/mail', 'TestController@mail')->name('test.mail');
 Route::post('/test/mail', 'TestController@sendMail')->name('test.mail.send');
+Route::get('/test/generate-pdf', 'TestController@domPDF')->name('test.domPDF');
+Route::post('/test/generate-pdf', 'TestController@pdfGenerate')->name('test.pdf.generate');
