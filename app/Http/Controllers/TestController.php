@@ -15,9 +15,9 @@ class TestController extends Controller
      */
     public function index()
     {
-        TestMail::dispatch();
+        // TestMail::dispatch();
         
-        return "test sending mail";
+        return view('test.index');        
     }
 
     /**

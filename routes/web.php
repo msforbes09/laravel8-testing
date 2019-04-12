@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('test', 'TestController');
+Route::get('test', 'TestController@index')->name('test.index');
