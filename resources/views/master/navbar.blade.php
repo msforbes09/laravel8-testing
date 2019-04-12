@@ -15,6 +15,8 @@
         <div class="navbar-end">
             <a class="navbar-item" href="{{ route('test.index') }}">Home</a>
 
+            <a class="navbar-item" href="{{ route('test.mail') }}">Mail</a>
+
             {{-- <a class="navbar-item" href="#">Documentation</a>
 
             <div class="navbar-item has-dropdown is-hoverable">

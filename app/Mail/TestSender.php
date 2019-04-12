@@ -11,23 +11,16 @@ class TestSender extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $mail;
+
+    public function __construct($mail)
     {
-        //
+        $this->mail = $mail;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
-        return $this->markdown('mail.test');
+        return $this->subject(ucwords($this->mail['subject']))
+            ->markdown('mail.test');
     }
 }
