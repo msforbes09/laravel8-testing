@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TestMailRequest;
 use App\Http\Requests\TestPdfRequest;
+use App\ImageModel;
 use App\Mail\TestSender;
-use PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Image;
+use PDF;
 
 class TestController extends Controller
 {
@@ -42,26 +44,39 @@ class TestController extends Controller
         return $pdf->stream();
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function image()
     {
-        //
+        $image = ImageModel::all()->reverse()->first();
+
+        return view('test.image', compact('image'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function imageUpload(Request $request)
     {
-        //
+        $request->validate(['image' => 'required|image']);
+
+        $image = $request->file('image');
+
+        $filename = time() . '.' . $image->getClientOriginalName();
+
+        $image = Image::make($image);
+
+        $image->save(public_path(). '/image/' .$filename);
+
+        $image->resize(150, 150);
+
+        $image->save(public_path(). '/thumbnail/'.$filename);
+
+        ImageModel::create([ 'filename' => $filename ]);
+
+        return redirect()->route('test.image')
+            ->with('message', 'Your image has been uploaded.');
+    }
+
+    public function imagePreview()
+    {
+        $image = ImageModel::all()->reverse()->first();
+
+        return view('test.image-preview', compact('image'));
     }
 }

@@ -1,14 +1,19 @@
 <?php
 
 // Home
-Breadcrumbs::for('home', function ($trail) {
-    $trail->push('Home', route('test.index'));
+Breadcrumbs::for('test', function ($trail) {
+    $trail->push('Test', route('test.index'));
 });
 
 // Home > About
 Breadcrumbs::for('mail', function ($trail) {
-    $trail->parent('home');
+    $trail->parent('test');
     $trail->push('Mail', route('test.mail'));
+});
+
+Breadcrumbs::for('image', function ($trail) {
+    $trail->parent('pdf');
+    $trail->push('Image', route('test.image'));
 });
 
 // Home > Blog

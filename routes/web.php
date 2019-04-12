@@ -21,3 +21,6 @@ Route::get('/test/mail', 'TestController@mail')->name('test.mail');
 Route::post('/test/mail', 'TestController@sendMail')->name('test.mail.send');
 Route::get('/test/generate-pdf', 'TestController@domPDF')->name('test.domPDF');
 Route::post('/test/generate-pdf', 'TestController@pdfGenerate')->name('test.pdf.generate');
+Route::get('/test/image', 'TestController@image')->name('test.image');
+Route::post('/test/image', 'TestController@imageUpload')->name('test.image.upload');
+Route::get('/test/image/preview', 'TestController@imagePreview')->name('test.image.preview');

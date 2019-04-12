@@ -8,6 +8,6 @@
 <body>
     <h1>{{ ucwords($request->title) }}</h1>
 
-    <p>{{ $request->content }}</p>
+    <pre>{{ $request->content }}</pre>
 </body>
 </html>
