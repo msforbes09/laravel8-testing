@@ -11,15 +11,20 @@ Breadcrumbs::for('mail', function ($trail) {
     $trail->push('Mail', route('test.mail'));
 });
 
+// Home > Blog
+Breadcrumbs::for('pdf', function ($trail) {
+    $trail->parent('mail');
+    $trail->push('DomPDF', route('test.domPDF'));
+});
+
 Breadcrumbs::for('image', function ($trail) {
     $trail->parent('pdf');
     $trail->push('Image', route('test.image'));
 });
 
-// Home > Blog
-Breadcrumbs::for('pdf', function ($trail) {
-    $trail->parent('mail');
-    $trail->push('DomPDF', route('test.domPDF'));
+Breadcrumbs::for('pusher', function ($trail) {
+    $trail->parent('image');
+    $trail->push('Pusher', route('test.pusher'));
 });
 
 // Home > Blog > [Category]

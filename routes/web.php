@@ -24,3 +24,5 @@ Route::post('/test/generate-pdf', 'TestController@pdfGenerate')->name('test.pdf.
 Route::get('/test/image', 'TestController@image')->name('test.image');
 Route::post('/test/image', 'TestController@imageUpload')->name('test.image.upload');
 Route::get('/test/image/preview', 'TestController@imagePreview')->name('test.image.preview');
+Route::get('/test/pusher', 'TestController@pusher')->name('test.pusher');
+Route::post('/test/pusher', 'TestController@pushMessage')->name('test.push.message');

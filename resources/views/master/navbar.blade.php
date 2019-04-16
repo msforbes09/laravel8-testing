@@ -20,6 +20,8 @@
             <a class="navbar-item" href="{{ route('test.domPDF') }}">DomPDF</a>
 
             <a class="navbar-item" href="{{ route('test.image') }}">Image</a>
+
+            <a class="navbar-item" href="{{ route('test.pusher') }}">Pusher</a>
         </div><!-- navbar-start -->
     </div><!-- navbar-menu -->
 </nav><!-- navbar -->

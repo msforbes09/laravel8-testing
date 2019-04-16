@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\TestPusherEvent;
 use App\Http\Requests\TestMailRequest;
 use App\Http\Requests\TestPdfRequest;
 use App\ImageModel;
@@ -78,5 +79,17 @@ class TestController extends Controller
         $image = ImageModel::all()->reverse()->first();
 
         return view('test.image-preview', compact('image'));
+    }
+
+    public function pusher()
+    {
+        return view('test.pusher');
+    }
+
+    public function pushMessage(Request $request)
+    {
+        event(new TestPusherEvent($request->only('message')));
+
+        // dd($request->only('message'));
     }
 }
