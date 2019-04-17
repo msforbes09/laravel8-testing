@@ -57,13 +57,15 @@
                         </div><!-- field -->
                     </form>
 
-                    <hr>
+                    @if ($image)
+                        <hr>
 
-                    <p class="has-text-centered">
-                        <a href="{{ route('test.image.preview') }}"><img src="{{ asset("thumbnail/{$image->filename}") }}"></a>
-                    </p>
+                        <p class="has-text-centered">
+                            <a href="{{ route('test.image.preview') }}"><img src="{{ asset("thumbnail/{$image->filename}") }}"></a>
+                        </p>
 
-                    <p class="label has-text-centered">Click me.</p>
+                        <p class="label has-text-centered">Click me.</p>
+                    @endif
                 </div><!-- message-body -->
             </article><!-- message -->
         </div><!-- container -->
