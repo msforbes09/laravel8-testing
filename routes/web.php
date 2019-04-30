@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 // testing area
 Route::get('/test', 'TestController@index')->name('test.index');
