@@ -26,3 +26,12 @@ Route::post('/test/image', 'TestController@imageUpload')->name('test.image.uploa
 Route::get('/test/image/preview', 'TestController@imagePreview')->name('test.image.preview');
 Route::get('/test/pusher', 'TestController@pusher')->name('test.pusher');
 Route::post('/test/pusher', 'TestController@pushMessage')->name('test.push.message');
+Route::get('/test/admin', 'TestController@admin')->name('test.admin');
+
+Route::get('/admin', 'AdminController@index')->name('admin.index');
+
+Route::get('/chat', 'ChatsController@index')->name('chat');
+Route::get('/messages', 'ChatsController@fetchMessages');
+Route::post('/messages', 'ChatsController@sendMessage');
+
+Auth::routes();

@@ -14,6 +14,11 @@ use PDF;
 
 class TestController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('test.index');        
@@ -91,5 +96,10 @@ class TestController extends Controller
         event(new TestPusherEvent($request->only('message')));
 
         // dd($request->only('message'));
+    }
+
+    public function admin()
+    {
+        return view('bulma-admin.index');
     }
 }

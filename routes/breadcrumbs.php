@@ -27,6 +27,16 @@ Breadcrumbs::for('pusher', function ($trail) {
     $trail->push('Pusher', route('test.pusher'));
 });
 
+Breadcrumbs::for('chatbox', function ($trail) {
+    $trail->parent('pusher');
+    $trail->push('Chatbox', route('chat'));
+});
+
+Breadcrumbs::for('dashboard', function ($trail) {
+    $trail->parent('chatbox');
+    $trail->push('Dashboard', route('test.admin'));
+});
+
 // Home > Blog > [Category]
 Breadcrumbs::for('category', function ($trail, $category) {
     $trail->parent('blog');

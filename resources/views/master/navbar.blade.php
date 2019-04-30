@@ -22,6 +22,20 @@
             <a class="navbar-item" href="{{ route('test.image') }}">Image</a>
 
             <a class="navbar-item" href="{{ route('test.pusher') }}">Pusher</a>
+
+            <a class="navbar-item" href="{{ route('chat') }}">Chatbox</a>
+
+            <a class="navbar-item" href="{{ route('test.admin') }}">Dashboard</a>
+
+            <a class="navbar-item" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+            </a>
+
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         </div><!-- navbar-start -->
     </div><!-- navbar-menu -->
 </nav><!-- navbar -->
