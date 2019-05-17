@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\TestEvent;
 use App\Events\TestPusherEvent;
 use App\Http\Requests\TestMailRequest;
 use App\Http\Requests\TestPdfRequest;
 use App\ImageModel;
 use App\Mail\TestSender;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Image;
 use PDF;
@@ -88,6 +90,14 @@ class TestController extends Controller
 
     public function pusher()
     {
+        // return config('broadcasting.default');
+
+        $user = Auth::user();
+
+        $message = Auth::user()->messages()->first();
+
+        broadcast(new TestEvent($user, $message))->toOthers();
+
         return view('test.pusher');
     }
 

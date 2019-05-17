@@ -2,6 +2,14 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+import { MdButton, MdContent, MdTabs } from 'vue-material/dist/components'
+import 'vue-material/dist/vue-material.min.css'
+
+Vue.use(MdButton)
+Vue.use(MdContent)
+Vue.use(MdTabs)
+
+
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('chat-messages', require('./components/ChatMessages.vue').default);
 Vue.component('chat-form', require('./components/ChatForm.vue').default);
