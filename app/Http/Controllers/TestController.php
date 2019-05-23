@@ -23,12 +23,12 @@ class TestController extends Controller
 
     public function index()
     {
-        return view('test.index');        
+        return view('test.index');
     }
 
     public function mail()
     {
-        return view ('test.mail');
+        return view('test.mail');
     }
 
     public function sendMail(TestMailRequest $request)

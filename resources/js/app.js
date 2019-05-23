@@ -2,12 +2,12 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import { MdButton, MdContent, MdTabs } from 'vue-material/dist/components'
-import 'vue-material/dist/vue-material.min.css'
+// import { MdButton, MdContent, MdTabs } from 'vue-material/dist/components'
+// import 'vue-material/dist/vue-material.min.css'
 
-Vue.use(MdButton)
-Vue.use(MdContent)
-Vue.use(MdTabs)
+// Vue.use(MdButton)
+// Vue.use(MdContent)
+// Vue.use(MdTabs)
 
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
@@ -42,7 +42,7 @@ const app = new Vue({
 
         addMessage(message) {
             this.messages.push(message);
-            
+
             axios.post('/messages', message).then(response => {
               console.log(response.data);
             });
